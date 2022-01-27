@@ -2,7 +2,7 @@ import { Box, Button, FormControl, FormLabel, Input, Textarea, Select, Center, T
 import { ArrowBackIcon } from "@chakra-ui/icons";
 import React, { useState, useMemo } from "react";
 import { useHistory } from "react-router-dom";
-import MongoDBController from "../../controllers/mongodbController";
+// import MongoDBController from "../../controllers/mongodbController";
 
 const Review = ({ address, mainnetProvider, userSigner, tx, readContracts, writeContracts, targetNetwork }) => {
   /***** Routes *****/
@@ -33,13 +33,13 @@ const Review = ({ address, mainnetProvider, userSigner, tx, readContracts, write
       .signMessage(`Create party:\n${partyObj.name}`)
       .then(sig => {
         // TODO: Do something with this
-        db.newParty(partyObj)
-          .then(d => {
-            setIsLoading(false);
-          })
-          .catch(err => {
-            console.log(err);
-          });
+        // db.newParty(partyObj)
+        //   .then(d => {
+        //     setIsLoading(false);
+        //   })
+        //   .catch(err => {
+        //     console.log(err);
+        //   });
       })
       .catch(err => {
         setIsLoading(false);
@@ -180,4 +180,4 @@ const Review = ({ address, mainnetProvider, userSigner, tx, readContracts, write
   );
 };
 
-export default Create;
+export default Review;
